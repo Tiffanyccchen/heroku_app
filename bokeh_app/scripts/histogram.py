@@ -21,7 +21,7 @@ from bokeh.application import Application
 from os.path import dirname, join
 
 def histogram_tab(car):
-    factors = list(car.columns[29:])
+    factors = list(car.columns[17:])
 
     def make_dataset(factor_list, range_start = 0, range_end = 20000, bin_width = 10):
         by_factor = pd.DataFrame(columns=['count', 'left', 'right', 
