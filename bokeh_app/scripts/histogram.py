@@ -21,7 +21,8 @@ from bokeh.application import Application
 from os.path import dirname, join
 
 def histogram_tab(car):
-    factors = list(car.columns[8:])
+    factors = ['駛離現場', '酒醉', '違規', '工作損失', '精神損失', '醫療支出', '手術', '工作暫停', '需請看護', '人死亡',
+       '失能', '殘廢', '車輛受損', '國家', '保險公司', '一般公司', '車禍當事人']
 
     def make_dataset(factor_list, range_start = 0, range_end = 20000, bin_width = 10):
         by_factor = pd.DataFrame(columns=['count', 'left', 'right', 
