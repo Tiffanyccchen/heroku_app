@@ -191,7 +191,7 @@ def histogram_tab(car):
                                step = 1, title = '賠償金額範圍 $NTD(單位:千元)')
     range_select.on_change('value', update)
     
-    button = Button(label="Download", button_type="success")
+    button = Button(label="所選條件之判決書下載", button_type="success")
     button.on_click(update_download)
     
     #dataset and appearance
@@ -237,7 +237,7 @@ def histogram_tab(car):
     money=column(money_text,money_text_1,money_text_3,money_text_2)
     law=column(law_text,law_text_1,law_text_2,law_text_3)
     texts=gridplot([money,law],ncols=1,spacing=7)
-    layout = gridplot([left,p,texts],plot_width=600, plot_height=500,ncols=3)
+    layout = gridplot([left,p,texts],plot_width=500, plot_height=500,ncols=3)
     
     # Make a tab with the layout 
     tab = Panel(child=layout, title = '車禍判決書互動式查詢系統')
