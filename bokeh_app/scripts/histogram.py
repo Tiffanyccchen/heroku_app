@@ -21,7 +21,7 @@ from bokeh.application import Application
 from os.path import dirname, join
 
 def histogram_tab(car):
-    factors = list(car.columns[17:])
+    factors = list(car.columns[7:])
 
     def make_dataset(factor_list, range_start = 0, range_end = 20000, bin_width = 10):
         by_factor = pd.DataFrame(columns=['count', 'left', 'right', 
@@ -156,7 +156,7 @@ def histogram_tab(car):
             for i, factor_name in enumerate(factor_list):
                 # Subset to the factor
                 subset = subset[subset[factor_name]==True]
-            subset=subset[['案由','全文','法院見解','全文_key','賠償金額_千']]
+            subset=subset[['案由','全文_摘要','法院見解_摘要','賠償金額_千']]
             subset=subset[(subset['賠償金額_千']>=range_start) & (subset['賠償金額_千']<=range_end)]
             subset.sort_values('賠償金額_千',inplace=True,ascending=False)
             return ColumnDataSource(subset)         
